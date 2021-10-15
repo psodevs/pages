@@ -1,0 +1,52 @@
+services:
+  runserver:
+    build: .
+    command: bash -c "python /code/manage.py migrate --noinput && python /code/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - celery
+    env_file: .env
+    environment:
+      - POSTGRES_HOST=db
+
+  autotests:
+    build: .
+    command: python manage.py test
+    env_file: .env
+    environment:
+      - POSTGRES_HOST=db
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:14.0
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    env_file: .env
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:6.2
+
+  celery:
+    build: .
+    command: celery -A pages worker -l info
+    env_file: .env
+    environment:
+      - POSTGRES_HOST=db
+    volumes:
+      - .:/code
+    depends_on:
+      - redis
+

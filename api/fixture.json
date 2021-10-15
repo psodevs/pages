@@ -1,0 +1,160 @@
+[
+  {
+    "model": "api.Page",
+    "pk": 1,
+    "fields": {
+      "title": "Страница 1"
+    }
+  },
+  {
+    "model": "api.Page",
+    "pk": 2,
+    "fields": {
+      "title": "Страница 2"
+    }
+  },
+  {
+    "model": "api.Page",
+    "pk": 3,
+    "fields": {
+      "title": "Страница 3"
+    }
+  },
+  {
+    "model": "api.Page",
+    "pk": 4,
+    "fields": {
+      "title": "Страница 4"
+    }
+  },
+  {
+    "model": "api.Page",
+    "pk": 5,
+    "fields": {
+      "title": "Страница 5"
+    }
+  },
+
+  {
+    "model": "api.Content",
+    "pk": 1,
+    "fields": {
+      "title": "Контент 1",
+      "type": "AUDIO",
+      "additional_attributes": {
+        "bit_rate": 1000
+      }
+    }
+  },
+
+  {
+    "model": "api.Content",
+    "pk": 2,
+    "fields": {
+      "title": "Контент 2",
+      "type": "VIDEO",
+      "additional_attributes": {
+        "link": "some-url.ru",
+        "subs_link": "some-url.ru"
+      }
+    }
+  },
+  {
+    "model": "api.Content",
+    "pk": 3,
+    "fields": {
+      "title": "Контент 3",
+      "type": "VIDEO",
+      "additional_attributes": {
+        "link": "some-url.ru",
+        "subs_link": "some-url.ru"
+      }
+    }
+  },
+  {
+    "model": "api.Content",
+    "pk": 4,
+    "fields": {
+      "title": "Контент 4",
+      "type": "TEXT",
+      "additional_attributes": {
+        "text": "Текстовое наполнение контента"
+      }
+    }
+  },
+  {
+    "model": "api.Content",
+    "pk": 5,
+    "fields": {
+      "title": "Контент 5",
+      "type": "TEXT",
+      "additional_attributes": {
+        "text": "Текстовое наполнение контента"
+      }
+    }
+  },
+
+  {
+    "model": "api.PageContent",
+    "pk": 1,
+    "fields": {
+      "page": 1,
+      "content": 1,
+      "order": 3
+    }
+  },
+  {
+    "model": "api.PageContent",
+    "pk":  1,
+    "fields": {
+      "page": 1,
+      "content": 2,
+      "order": 2
+    }
+  },
+  {
+    "model": "api.PageContent",
+    "pk":  2,
+    "fields": {
+      "page": 1,
+      "content": 3,
+      "order": 1
+    }
+  },
+  {
+    "model": "api.PageContent",
+    "pk":  3,
+    "fields": {
+      "page": 1,
+      "content": 5,
+      "order": 4
+    }
+  },
+  {
+    "model": "api.PageContent",
+    "pk":  4,
+    "fields": {
+      "page": 2,
+      "content": 1,
+      "order": 1
+    }
+  },
+  {
+    "model": "api.PageContent",
+    "pk":  5,
+    "fields": {
+      "page": 2,
+      "content": 4,
+      "order": 2
+    }
+  },
+  {
+    "model": "api.PageContent",
+    "pk":  6,
+    "fields": {
+      "page": 2,
+      "content": 5,
+      "order": 3
+    }
+  }
+]
